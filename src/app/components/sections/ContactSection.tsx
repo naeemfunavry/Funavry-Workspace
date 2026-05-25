@@ -12,7 +12,7 @@ const CONTACT_ROWS = [
   {
     icon: MapPin,
     label: "Address",
-    val: "Blue Area, F-7 Markaz, Islamabad, Pakistan",
+    val: "G8/1, Sector G-8, Islamabad, Pakistan",
   },
   {
     icon: Phone,

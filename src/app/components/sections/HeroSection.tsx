@@ -70,7 +70,7 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-full object-cover opacity-[0.18]"
+                      className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"
                     />
                   </motion.div>
                 </div>
@@ -96,7 +96,7 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
           </div>
         </Carousel>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07071A]/65 via-[#07071A]/20 to-[#07071A] pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-[#07071A]/65 via-[#07071A]/20 to-[#07071A] pointer-events-none" /> */}
       </div>
 
       <div className="absolute inset-0 z-[1] pointer-events-none">
@@ -105,58 +105,65 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
         <div className="absolute bottom-[15%] left-[40%] w-[700px] h-[280px] bg-amber-500/[0.10] rounded-full blur-[80px]" />
       </div>
 
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-5 lg:px-8 pt-28 pb-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 34 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.85,
-              delay: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="text-[44px] sm:text-6xl lg:text-7xl xl:text-[80px] font-extrabold text-white leading-[1.04] tracking-[-0.02em] mb-6"
-            style={headingFont}>
-            Work Smarter in
-            <span className="bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent mx-2">
-              {"Islamabad's Most"}
-            </span>
-            Inspiring Space
-          </motion.h1>
+      <div className="relative z-10 flex-1 flex flex-col items-start justify-center px-5 lg:px-8 pt-28 pb-16">
+        <div className="max-w-7xl mx-auto px-5 mx-auto text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <div className="col-span-1">
+              <motion.h1
+                initial={{ opacity: 0, y: 34 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.85,
+                  delay: 0.35,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="text-[44px] sm:text-6xl lg:text-6xl xl:text-[80px] text-white leading-[1.04] tracking-[-0.02em] mb-6"
+                style={headingFont}>
+                Work Smarter in
+                <br />
+                <span className="bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent mx-2">
+                  {"Islamabad's Most"}
+                </span>
+                <br />
+                Inspiring Space
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.52 }}
-            className="text-lg sm:text-xl text-white/50 max-w-6xl mx-auto mb-10 leading-relaxed">
-            Welcome to Funavry — a modern workspace built for freelancers,
-            startups, remote teams, and growing IT companies. Located adjacent
-            to Srinagar Highway and steps from the Metro Bus Terminal, we
-            combine accessibility, comfort, and productivity in one vibrant
-            environment. A place where great ideas truly find a home.
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.52 }}
+                className="text-lg sm:text-xl text-white/50 max-w-6xl mx-auto mb-10 leading-relaxed">
+                Welcome to Funavry — a modern workspace built for freelancers,
+                startups, remote teams, and growing IT companies. Located
+                adjacent to Srinagar Highway and steps from the Metro Bus
+                Terminal, we combine accessibility, comfort, and productivity in
+                one vibrant environment. A place where great ideas truly find a
+                home.
+              </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.67 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onBookTour}
-              className="group flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-2xl hover:shadow-amber-500/45 transition-all duration-300 hover:scale-105 active:scale-95">
-              Book a Tour
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-            <button
-              onClick={() => scrollTo("services")}
-              className="flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.09] text-white font-semibold text-base border border-white/[0.18] hover:bg-white/[0.14] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95">
-              Explore Plans
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.67 }}
+                className="flex flex-col sm:flex-row items-center justify-start gap-4">
+                <button
+                  onClick={onBookTour}
+                  className="group flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-2xl hover:shadow-amber-500/45 transition-all duration-300 hover:scale-105 active:scale-95">
+                  Book a Tour
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+                <button
+                  onClick={() => scrollTo("services")}
+                  className="flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.09] text-white font-semibold text-base border border-white/[0.18] hover:bg-white/[0.14] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95">
+                  Explore Plans
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 44 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.88 }}
@@ -175,7 +182,7 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
               </div>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 export const headingFont: { fontFamily: string } = {
-  fontFamily: "'Plus Jakarta Sans', sans-serif",
+  fontFamily: "'Outfit', sans-serif",
 };
 
 export const sectionHeadingClass =

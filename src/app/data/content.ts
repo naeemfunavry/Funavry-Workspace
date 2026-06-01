@@ -47,6 +47,14 @@ import gallery15 from "@/assets/images/gallery/15.jpg";
 import gallery16 from "@/assets/images/gallery/16.jpg";
 import gallery17 from "@/assets/images/gallery/17.jpg";
 
+// Why Choose Images
+import whyChoose1 from "@/assets/images/why-choose/1.png";
+import whyChoose2 from "@/assets/images/why-choose/2.png";
+import whyChoose3 from "@/assets/images/why-choose/3.png";
+import whyChoose4 from "@/assets/images/why-choose/4.png";
+import whyChoose5 from "@/assets/images/why-choose/5.png";
+import whyChoose6 from "@/assets/images/why-choose/6.png";
+
 export const HERO_BG_IMAGES = [
   {
     src: hero1,
@@ -80,6 +88,20 @@ export const STATS = [
   { value: "50+", label: "Partner Companies" },
   { value: "15,000", label: "Sq. Ft. Space" },
   { value: "3", label: "Prime Locations" },
+];
+
+export const MARQUEE_ITEMS = [
+  "Premium Coworking",
+  "High-Speed Fiber Internet",
+  "Metro-Adjacent Location",
+  "24/7 Secure Access",
+  "Meeting Rooms",
+  "Event Space",
+  "Hot Beverages Bar",
+  "Dedicated Desks",
+  "Private Offices",
+  "Startup-Friendly Plans",
+  "Book a Tour Today",
 ];
 
 export type Service = {
@@ -234,7 +256,7 @@ export const TESTIMONIALS = [
     role: "CEO",
     company: "NovaTech Solutions",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/ahmed-khalid.jpg",
     text: "Funavry completely changed how we work. We moved in as a 3-person startup with no idea what we were doing, and within 6 months the community, mentors, and sheer energy of the space helped us close our first seed round. This isn't just a desk — it's a launchpad.",
     rating: 5,
   },
@@ -243,7 +265,7 @@ export const TESTIMONIALS = [
     role: "Creative Director",
     company: "Pixel & Co.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/sana-rehman.jpg",
     text: "We were skeptical about co-working for a 12-person software house, but Funavry's private office suite exceeded every expectation. The enterprise-grade internet alone saved us from switching our ISP. The team is professional, responsive, and genuinely invested in our success.",
     rating: 5,
   },
@@ -252,7 +274,7 @@ export const TESTIMONIALS = [
     role: "Founder",
     company: "Launchpad PK",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/usman-baig.jpg",
     text: "Working from home was killing my productivity. CalmKaaj gave me structure, a professional background for my client calls, and honestly the best chai in Islamabad. I've landed three international clients just by networking with people I met in the lounge here.",
     rating: 5,
   },
@@ -261,7 +283,7 @@ export const TESTIMONIALS = [
     role: "Founder",
     company: "Business Coach",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/maria-zaidi.jpg",
     text: "I've used co-working spaces in Dubai and Kuala Lumpur, and Funavry honestly belongs in the same conversation. The ergonomic setup, the quiet zones, the meeting rooms — everything is thoughtfully designed. My investors were genuinely impressed when I hosted them here.",
     rating: 5,
   },
@@ -270,7 +292,7 @@ export const TESTIMONIALS = [
     role: "Founder",
     company: "Business Coach",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/tariq-nawaz.jpg",
     text: "Our Singapore-based company needed a Islamabad base for our local team. Funavry's virtual office and dedicated desks were the perfect solution — professional address, reception, and a team that handles everything. Our remote setup has never felt so smooth.",
     rating: 5,
   },
@@ -279,7 +301,7 @@ export const TESTIMONIALS = [
     role: "Strategy Consultant & Business Coach",
     company: "Business Coach",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/faisal-karimi.jpg",
     text: "Before Funavry, I was running my consultancy from home and coffee shops. Now I have a proper address, a professional boardroom for client meetings, and a community of like-minded people to think out loud with. It's the best professional investment I've made this year.",
     rating: 5,
   },
@@ -288,7 +310,7 @@ export const TESTIMONIALS = [
     role: "CTO",
     company: "CloudNest Systems",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&auto=format",
+      "../assets/images/testimonials/hassan-mirza.jpg",
     text: "We scaled from 5 to 18 people within the same building without missing a beat. Funavry handled the transition seamlessly — new office, new layout, zero downtime for our dev team. The generator backup means load-shedding is now completely off our radar.",
     rating: 5,
   },
@@ -297,21 +319,21 @@ export const TESTIMONIALS = [
 export const GALLERY_ITEMS = [
   {
     url: gallery1,
-    alt: "Funavry building on Srinagar Highway",
+    alt: "Funavry building on G8/1 Islamabad",
     wide: true,
   },
   {
     url: gallery2,
-    alt: "Prime location with easy city access",
+    alt: "Funavry Technologies Restroom",
   },
   {
     url: gallery3,
-    alt: "Funavry Technologies lobby entrance",
+    alt: "Funavry Technologies Playing Area",
     tall: true,
   },
   {
     url: gallery4,
-    alt: "Collaboration-focused workspace entrance",
+    alt: "Reception lounge for conversation",
   },
   {
     url: gallery5,
@@ -364,7 +386,7 @@ export const GALLERY_ITEMS = [
   },
   {
     url: gallery16,
-    alt: "Reception lounge for conversation",
+    alt: "Collaboration-focused workspace entrance",
   },
   {
     url: gallery17,
@@ -377,40 +399,94 @@ export const WHY_ITEMS = [
   {
     icon: Cpu,
     title: "Modern Infrastructure Built for IT Companies",
+    summary:
+      "Experience a workspace engineered for productivity with high-speed uninterrupted internet, ergonomic workstations, smart meeting rooms, reliable power backup, and secure technology infrastructure designed to support modern businesses and growing teams.",
     body: "Experience a workspace engineered for productivity with high-speed uninterrupted internet, ergonomic workstations, smart meeting rooms, reliable power backup, and secure technology infrastructure designed to support modern businesses and growing teams.",
     accent: "#2B7BC8",
+    image: whyChoose1,
   },
   {
     icon: MapPinIcon,
     title: "Prime Location with Seamless Accessibility",
+    summary:
+      "Strategically located adjacent to Srinagar Highway and within walking distance of the Metro Bus Terminal, Funavry offers quick access to key business districts, restaurants, cafés, gyms, banks, and essential professional services.",
     body: "Strategically located adjacent to Srinagar Highway and within walking distance of the Metro Bus Terminal, Funavry offers quick access to key business districts, restaurants, cafés, gyms, banks, and essential professional services.",
     accent: "#F59E0B",
+    image: whyChoose2,
   },
   {
     icon: Gem,
     title: "All-Inclusive Premium Amenities",
+    summary:
+      "From 24/7 security and uninterrupted utilities to housekeeping, refreshments, dedicated support staff, and fully equipped conference spaces, every detail is managed so you can focus entirely on your business.",
     body: "From 24/7 security and uninterrupted utilities to housekeeping, refreshments, dedicated support staff, and fully equipped conference spaces, every detail is managed so you can focus entirely on your business.",
     accent: "#06B6D4",
+    image: whyChoose3,
   },
   {
     icon: Users,
     title: "A Collaborative Community of Innovators",
+    summary:
+      "Join a vibrant ecosystem of freelancers, startups, entrepreneurs, and IT professionals where collaboration, networking, mentorship, and new opportunities happen naturally every day.",
     body: "Join a vibrant ecosystem of freelancers, startups, entrepreneurs, and IT professionals where collaboration, networking, mentorship, and new opportunities happen naturally every day.",
     accent: "#F59E0B",
+    image: whyChoose4,
   },
   {
     icon: Lightbulb,
     title: "Designed for Focus, Creativity & Growth",
+    summary:
+      "Our thoughtfully designed workspaces balance energy and calm — featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
     body: "Our thoughtfully designed workspaces balance energy and calm — featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
     accent: "#10B981",
+    image: whyChoose5,
   },
   {
     icon: SlidersHorizontal,
     title: "Flexible Workspace Solutions",
+    summary:
+      "Whether you are an individual freelancer, a remote team, or a scaling technology company, Funavry offers flexible workspace solutions tailored to your evolving business needs.",
     body: "Whether you are an individual freelancer, a remote team, or a scaling technology company, Funavry offers flexible workspace solutions tailored to your evolving business needs.",
     accent: "#EC4899",
+    image: whyChoose6,
   },
 ];
+
+export const WHY_CHOOSE_SPLIT = {
+  eyebrow: "Why Funavry",
+  title: "More than a desk —",
+  titleAccent: "a community",
+  description:
+    "At Funavry, we believe your environment shapes your potential. From silent focus rooms to vibrant collaboration hubs, every corner is designed to fuel creative energy and professional excellence in the F-Sector, Islamabad.",
+  mainImage: {
+    src: whyChoose1,
+    alt: "Modern coworking workspace at Funavry",
+  },
+  insetImage: {
+    src: whyChoose4,
+    alt: "Collaborative desk setup at Funavry",
+  },
+  features: [
+    {
+      icon: Cpu,
+      title: "Modern Infrastructure",
+      description:
+        "Gigabit fiber, enterprise-grade video conferencing, and backup power — built for IT companies.",
+    },
+    {
+      icon: Lock,
+      title: "24/7 Secure Access",
+      description:
+        "Biometric entry, CCTV, and on-site security — work at your own pace, day or night.",
+    },
+    {
+      icon: Users,
+      title: "Thriving Community",
+      description:
+        "Monthly events, workshops, and a network of ambitious professionals to grow alongside.",
+    },
+  ],
+} as const;
 
 export const NAV_LINKS = [
   { label: "Plans", id: "services" },

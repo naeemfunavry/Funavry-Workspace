@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import {
-  headingFont,
   sectionHeadingDark,
   sectionHeadingLight,
   sectionSubheadingClass,
@@ -34,9 +33,7 @@ export function SectionHeading({
             <Pill dark={dark}>{pill}</Pill>
           </FadeUp>
           <FadeUp delay={0.05}>
-            <h2
-              className={dark ? sectionHeadingDark : sectionHeadingLight}
-              style={headingFont}>
+            <h2 className={dark ? sectionHeadingDark : sectionHeadingLight}>
               {children}
             </h2>
           </FadeUp>

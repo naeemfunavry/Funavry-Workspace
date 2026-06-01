@@ -2,6 +2,11 @@ import { useState } from "react";
 import { AnimatePresence } from "motion/react";
 import { BookingModal } from "@/app/components/BookingModal";
 import {
+  CustomGoldCursor,
+  MarqueeTicker,
+  RevealSection,
+} from "@/app/components/interactive";
+import {
   Navbar,
   HeroSection,
   ServicesSection,
@@ -23,23 +28,35 @@ export default function App() {
     <div className="min-h-screen">
       <style>{`html { scroll-behavior: smooth; } ::-webkit-scrollbar { display: none; }`}</style>
 
+      <CustomGoldCursor />
       <Navbar onBookTour={() => openBooking()} />
       <HeroSection onBookTour={() => openBooking()} />
-      <ServicesSection onBook={openBooking} />
-      <WhyChooseSection />
-      <AmenitiesSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
+
+      <RevealSection>
+        <ServicesSection onBook={openBooking} />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <WhyChooseSection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <AmenitiesSection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <GallerySection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <TestimonialsSection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <ContactSection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <Footer />
+      </RevealSection>
 
       <AnimatePresence>
         {modal && (
-          <BookingModal
-            key="modal"
-            service={modal}
-            onClose={closeBooking}
-          />
+          <BookingModal key="modal" service={modal} onClose={closeBooking} />
         )}
       </AnimatePresence>
     </div>

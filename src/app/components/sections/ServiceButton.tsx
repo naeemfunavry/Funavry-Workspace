@@ -14,7 +14,7 @@ export function ServiceButton({ accent, price, onClick }: ServiceButtonProps) {
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="w-full py-3.5 rounded-2xl font-semibold text-sm transition-all duration-300 active:scale-95 hover:scale-[1.02]"
+      className="cursor-pointer w-full py-3.5 rounded-2xl text-base font-semibold transition-all duration-300 active:scale-95 hover:scale-[1.02]"
       style={{
         background: hovered ? accent : `${accent}18`,
         color: hovered ? "#fff" : accent,

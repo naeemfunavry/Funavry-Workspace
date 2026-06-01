@@ -15,7 +15,8 @@ export function Navbar({ onBookTour }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30);
+    const fn = () => setScrolled(window.scrollY > 24);
+    fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
@@ -27,18 +28,24 @@ export function Navbar({ onBookTour }: NavbarProps) {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#07071A]/88 backdrop-blur-2xl border-b border-white/[0.07] shadow-xl shadow-black/30"
-          : ""
+          ? "nav-frosted bg-[#07071A]/72 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+          : "bg-transparent"
       }`}>
+      <div
+        className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent transition-opacity duration-500 ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+        aria-hidden
+      />
       <div className="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between">
         <button
           onClick={() => scrollTo("hero")}
-          className="flex items-center gap-2.5 group">
+          className="flex items-center gap-2.5 group cursor-pointer">
           <div className=" px-3 py-1.5 ">
             <ImageWithFallback
               src={funavryLogo}
               alt="Funavry Coworking Space"
-              className="h-7 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
           </div>
         </button>
@@ -48,7 +55,7 @@ export function Navbar({ onBookTour }: NavbarProps) {
             <button
               key={l.id}
               onClick={() => scrollTo(l.id)}
-              className="px-4 py-2 text-white/55 hover:text-white text-sm font-medium transition-colors rounded-lg hover:bg-white/[0.06]">
+              className="px-4 py-2 text-white/55 hover:text-white text-sm font-semibold transition-colors rounded-lg hover:bg-white/[0.06] cursor-pointer">
               {l.label}
             </button>
           ))}
@@ -57,13 +64,13 @@ export function Navbar({ onBookTour }: NavbarProps) {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onBookTour}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white text-sm font-semibold hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 hover:scale-105 active:scale-95">
+            className="cursor-pointer px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white text-base font-semibold hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 hover:scale-105 active:scale-95">
             Book a Tour
           </button>
         </div>
 
         <button
-          className="md:hidden text-white/70 hover:text-white p-2 transition-colors"
+          className="md:hidden text-white/70 hover:text-white p-2 transition-colors cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -86,7 +93,7 @@ export function Navbar({ onBookTour }: NavbarProps) {
                     scrollTo(l.id);
                     setOpen(false);
                   }}
-                  className="text-white/60 hover:text-white text-base font-medium text-left py-2.5 px-3 rounded-xl hover:bg-white/[0.05] transition-colors">
+                  className="text-white/60 hover:text-white text-base font-semibold text-left py-2.5 px-3 rounded-xl hover:bg-white/[0.05] transition-colors cursor-pointer">
                   {l.label}
                 </button>
               ))}
@@ -95,7 +102,7 @@ export function Navbar({ onBookTour }: NavbarProps) {
                   onBookTour();
                   setOpen(false);
                 }}
-                className="mt-2 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-sm text-center">
+                className="mt-2 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base text-center cursor-pointer">
                 Book a Tour
               </button>
             </div>

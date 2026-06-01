@@ -1,0 +1,347 @@
+/* ── Accordion shell ───────────────────────────────────────────── */
+.why-accordion {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  outline: none;
+}
+
+.why-accordion--desktop {
+  height: 560px;
+}
+
+.why-accordion--mobile {
+  flex-direction: column;
+  height: auto;
+}
+
+/* ── Cards: flex-grow only (never width) ─────────────────────────── */
+.why-accordion-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition:
+    flex-grow 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 500ms ease;
+}
+
+.why-accordion--desktop .why-accordion-card {
+  height: 560px;
+}
+
+.why-accordion--mobile .why-accordion-card {
+  width: 100%;
+  flex: 1 1 0%;
+  min-height: 88px;
+  transition:
+    flex-grow 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 500ms ease;
+}
+
+.why-accordion--mobile .why-accordion-card[data-active="true"] {
+  flex-grow: 6;
+  min-height: 360px;
+}
+
+/* Desktop: all cards equal until hover/focus; expanded gets flex-grow 6 */
+.why-accordion--desktop:hover .why-accordion-card,
+.why-accordion--desktop:has(.why-accordion-card:focus-visible)
+  .why-accordion-card {
+  flex-grow: 1;
+}
+
+.why-accordion--desktop .why-accordion-card:hover,
+.why-accordion--desktop .why-accordion-card:focus-visible {
+  flex-grow: 6;
+}
+
+/* Default expanded first card when not hovering or focusing */
+.why-accordion--desktop:not(:hover):not(:has(.why-accordion-card:focus-visible))
+  .why-accordion-card:first-child {
+  flex-grow: 6;
+}
+
+.why-accordion-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 0, 79, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-accordion-card,
+  .why-panel-image,
+  .why-panel-copy,
+  .why-panel-collapsed-title,
+  .why-panel-expanded {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Background image (scale only) ───────────────────────────────── */
+.why-panel-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: scale(1) translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 800ms ease;
+}
+
+.why-accordion--desktop .why-accordion-card:hover .why-panel-image,
+.why-accordion--desktop .why-accordion-card:focus-visible .why-panel-image,
+.why-accordion--desktop:not(:hover):not(:has(.why-accordion-card:focus-visible))
+  .why-accordion-card:first-child
+  .why-panel-image,
+.why-accordion--mobile
+  .why-accordion-card[data-active="true"]
+  .why-panel-image {
+  transform: scale(1.08) translateZ(0);
+}
+
+/* ── Overlays ────────────────────────────────────────────────────── */
+.why-panel-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.why-panel-overlay--gradient {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+.why-panel-overlay--accent {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.why-accordion-card:hover .why-panel-overlay--accent,
+.why-accordion-card:focus-visible .why-panel-overlay--accent,
+.why-accordion--desktop:not(:hover):not(:has(.why-accordion-card:focus-visible))
+  .why-accordion-card:first-child
+  .why-panel-overlay--accent,
+.why-accordion--mobile
+  .why-accordion-card[data-active="true"]
+  .why-panel-overlay--accent {
+  opacity: 1;
+}
+
+/* ── Content: fixed padding, no layout shift ─────────────────────── */
+.why-panel-inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  gap: 12px;
+}
+
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-inner {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+/* ── Badge: fixed size ───────────────────────────────────────────── */
+.why-panel-badge {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.why-accordion-card:hover .why-panel-badge,
+.why-accordion-card:focus-visible .why-panel-badge {
+  animation: badge-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+/* ── Collapsed vertical title (desktop narrow state) ─────────────── */
+.why-panel-collapsed-title {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  margin: 0;
+  max-height: calc(100% - 120px);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  writing-mode: vertical-rl;
+  transform: translateX(-50%) rotate(180deg) translateZ(0);
+  opacity: 1;
+  pointer-events: none;
+  will-change: opacity;
+  transition: opacity 500ms ease;
+  backface-visibility: hidden;
+}
+
+.why-accordion--desktop .why-accordion-card:hover .why-panel-collapsed-title,
+.why-accordion--desktop
+  .why-accordion-card:focus-visible
+  .why-panel-collapsed-title,
+.why-accordion--desktop:not(:hover):not(:has(.why-accordion-card:focus-visible))
+  .why-accordion-card:first-child
+  .why-panel-collapsed-title {
+  opacity: 0;
+}
+
+.why-accordion--mobile .why-panel-collapsed-title {
+  display: none;
+}
+
+/* ── Expanded copy: fade + slide ─────────────────────────────────── */
+.why-panel-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  will-change: transform, opacity;
+  transform: translateY(20px) translateZ(0);
+  opacity: 0;
+  backface-visibility: hidden;
+  transition:
+    opacity 500ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.why-accordion--desktop .why-accordion-card:hover .why-panel-expanded,
+.why-accordion--desktop .why-accordion-card:focus-visible .why-panel-expanded,
+.why-accordion--desktop:not(:hover):not(:has(.why-accordion-card:focus-visible))
+  .why-accordion-card:first-child
+  .why-panel-expanded,
+.why-accordion--mobile
+  .why-accordion-card[data-active="true"]
+  .why-panel-expanded {
+  transform: translateY(0) translateZ(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.why-panel-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-title {
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-summary,
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-cta {
+  display: none;
+}
+
+.why-panel-summary {
+  max-width: 36rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.why-panel-cta {
+  display: inline-flex;
+  height: 44px;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-accordion-card:hover .why-panel-cta {
+  transform: translate(2px, -2px) translateZ(0);
+}
+
+/* Mobile compact title in row when inactive */
+.why-panel-mobile-title {
+  display: none;
+  min-width: 0;
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-mobile-title {
+  display: block;
+}
+
+.why-accordion--mobile
+  .why-accordion-card:not([data-active="true"])
+  .why-panel-expanded
+  .why-panel-title {
+  display: none;
+}

@@ -25,7 +25,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white/70 font-semibold text-sm mb-4 uppercase tracking-wider text-[11px]">
+            <h4 className="font-heading text-white/70 font-semibold mb-4 uppercase tracking-wider text-[11px]">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -42,7 +42,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white/70 font-semibold text-sm mb-4 uppercase tracking-wider text-[11px]">
+            <h4 className="font-heading text-white/70 font-semibold mb-4 uppercase tracking-wider text-[11px]">
               Contact
             </h4>
             <ul className="space-y-2.5 text-sm text-white/38">

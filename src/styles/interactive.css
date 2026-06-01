@@ -1,0 +1,101 @@
+/* Sticky frosted nav */
+.nav-frosted {
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+/* Custom gold cursor — desktop pointer only */
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.gold-cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+}
+
+.gold-cursor-dot--hover {
+  width: 4px;
+  height: 4px;
+  opacity: 0.85;
+}
+
+.gold-cursor-ring {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(251, 191, 36, 0.45);
+  background: rgba(245, 158, 11, 0.06);
+  backdrop-filter: blur(2px);
+}
+
+.gold-cursor-ring--hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(251, 191, 36, 0.75);
+  background: rgba(245, 158, 11, 0.12);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.2);
+}
+
+/* Gold marquee */
+.marquee-viewport {
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.marquee-viewport:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hero scroll indicator — flowing gold line */
+.scroll-indicator-flow {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(251, 191, 36, 0.15) 20%,
+    #f59e0b 45%,
+    #fbbf24 55%,
+    rgba(251, 191, 36, 0.15) 80%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: scroll-line-flow 2s ease-in-out infinite;
+}
+
+@keyframes scroll-line-flow {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-viewport {
+    animation: none;
+  }
+
+  .scroll-indicator-flow {
+    animation: none;
+    background: #f59e0b;
+    opacity: 0.6;
+  }
+}

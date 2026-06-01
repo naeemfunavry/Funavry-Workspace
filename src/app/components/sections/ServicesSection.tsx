@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Building2, Check, Sparkles, Zap } from "lucide-react";
 import { SERVICES, type Service } from "@/app/data/content";
-import { headingFont, sectionHeadingGradient } from "@/app/lib/styles";
+import { cardTitleClass, sectionHeadingGradient } from "@/app/lib/styles";
 import { FadeUp } from "@/app/components/shared/FadeUp";
 import { SectionHeading } from "@/app/components/shared/SectionHeading";
 import { cn } from "@/app/components/ui/utils";
@@ -111,9 +111,7 @@ function ServiceCard({
                   style={{ color: service.accent }}
                 />
               </motion.div>
-              <span
-                className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#07071A]/20"
-                style={headingFont}>
+              <span className="font-heading text-[11px] font-bold uppercase tracking-[0.16em] text-[#07071A]/20">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>
@@ -127,9 +125,7 @@ function ServiceCard({
           </motion.div>
 
           <div className="relative flex-1">
-            <h3
-              className="text-[22px] font-bold leading-tight text-[#07071A]"
-              style={headingFont}>
+            <h3 className={`${cardTitleClass} text-[#07071A]`}>
               {service.title}
             </h3>
             <p
@@ -151,8 +147,7 @@ function ServiceCard({
                 className={cn(
                   "font-extrabold tracking-tight text-[#07071A]",
                   isEnterprise ? "text-[28px]" : "text-[40px] leading-none",
-                )}
-                style={headingFont}>
+                )}>
                 {service.price}
               </span>
               <span className="mb-1 text-sm text-[#9CA3AF]">
@@ -208,7 +203,7 @@ export function ServicesSection({ onBook }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#F8F8FD] px-5 py-28 lg:px-8">
+      className="relative overflow-hidden bg-[#ffffff] px-5 py-28 lg:px-8">
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           className="absolute -left-32 top-0 h-[520px] w-[520px] rounded-full bg-[#3B85C4]/[0.07] blur-[120px]"
@@ -272,7 +267,7 @@ export function ServicesSection({ onBook }: ServicesSectionProps) {
           ))}
         </div>
 
-        <div className="mx-auto mt-5 grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+        <div className="mx-auto mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
           {secondaryTiers.map((service, i) => (
             <ServiceCard
               key={service.id}
@@ -288,9 +283,7 @@ export function ServicesSection({ onBook }: ServicesSectionProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-[#3B85C4]/[0.04] via-transparent to-[#F59E0B]/[0.04]" />
             <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <motion.div>
-                <p
-                  className="text-sm font-bold text-[#07071A]"
-                  style={headingFont}>
+                <p className="service-title font-heading text-sm font-bold text-[#07071A]">
                   Every plan includes
                 </p>
                 <p className="mt-1 text-[13px] text-[#6B7280]">
@@ -311,7 +304,7 @@ export function ServicesSection({ onBook }: ServicesSectionProps) {
               <button
                 type="button"
                 onClick={() => onBook("Book a Tour")}
-                className="group inline-flex flex-shrink-0 items-center gap-2 rounded-2xl bg-[#07071A] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#07071A]/90 hover:shadow-lg hover:shadow-black/10 active:scale-[0.98]">
+                className="cursor-pointer group inline-flex flex-shrink-0 items-center gap-2 rounded-2xl bg-[#07071A] px-5 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-[#07071A]/90 hover:shadow-lg hover:shadow-black/10 active:scale-[0.98]">
                 Book a tour
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </button>

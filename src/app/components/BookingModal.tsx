@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 import { X, Check } from "lucide-react";
-import { headingFont } from "@/app/lib/styles";
 
 const INPUT_CLASS =
   "w-full px-4 py-3 rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] text-[#07071A] placeholder-[#C4C4D4] focus:outline-none focus:ring-2 focus:ring-amber-500/25 focus:border-amber-400 transition-all text-sm";
@@ -51,7 +50,7 @@ export function BookingModal({ service, onClose }: BookingModalProps) {
         <div className="p-7">
           <div className="flex items-start justify-between mb-6">
             <div>
-              <h3 className="text-[19px] font-bold text-[#07071A]" style={headingFont}>
+              <h3 className="font-heading text-lg font-bold text-[#07071A]">
                 {service === "Book a Tour" ? "Book a Tour" : `Book: ${service}`}
               </h3>
               <p className="text-sm text-[#9CA3AF] mt-1">
@@ -73,7 +72,7 @@ export function BookingModal({ service, onClose }: BookingModalProps) {
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/25">
                 <Check className="w-7 h-7 text-white" />
               </div>
-              <h4 className="font-bold text-[#07071A] text-lg mb-2" style={headingFont}>
+              <h4 className="font-heading font-bold text-[#07071A] text-lg mb-2">
                 {"You're"} all set!
               </h4>
               <p className="text-[#6B7280] text-sm max-w-[260px] mx-auto">

@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 import { Mail, MapPin, Phone, Clock, Check } from "lucide-react";
-import { headingFont, sectionHeadingGradient } from "@/app/lib/styles";
+import { sectionHeadingGradient } from "@/app/lib/styles";
 import { FadeUp } from "@/app/components/shared/FadeUp";
 import { SectionHeading } from "@/app/components/shared/SectionHeading";
 
 const INPUT_CLASS =
-  "w-full px-4 py-3.5 rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] text-[#07071A] placeholder-[#C4C4D4] focus:outline-none focus:ring-2 focus:ring-amber-500/25 focus:border-amber-400 transition-all text-sm";
+  "w-full px-4 py-3.5 rounded-xl border border-[#2B2B42] bg-[#13132A] text-[#F8F8FF] placeholder-[#C4C4D4] focus:outline-none focus:ring-2 focus:ring-amber-500/25 focus:border-amber-400 transition-all text-sm";
 
 const CONTACT_ROWS = [
   {
@@ -47,9 +47,17 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-white py-28 px-5 lg:px-8">
+    <section
+      id="contact"
+      className="relative bg-[#07071A] py-28 px-5 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-[#2E7BC4]/[0.12] rounded-full blur-[80px]" />
+        <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-[#F59E0B]/[0.10] rounded-full blur-[80px]" />
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl">
         <SectionHeading
+          dark
           pill={
             <>
               <Mail className="h-3 w-3" />
@@ -72,9 +80,7 @@ export function ContactSection() {
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto mb-5 shadow-xl shadow-amber-500/30">
                   <Check className="w-8 h-8 text-white" />
                 </div>
-                <h3
-                  className="text-2xl font-bold text-[#07071A] mb-2"
-                  style={headingFont}>
+                <h3 className="font-heading text-2xl font-bold text-[#07071A] mb-2">
                   Message received!
                 </h3>
                 <p className="text-[#6B7280]">
@@ -86,7 +92,7 @@ export function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">
+                    <label className="block text-sm font-medium text-[#F8F8FF] mb-1.5">
                       Full Name
                     </label>
                     <input
@@ -101,7 +107,7 @@ export function ContactSection() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1.5">
+                    <label className="block text-sm font-medium text-[#F8F8FF] mb-1.5">
                       Email Address
                     </label>
                     <input
@@ -117,7 +123,7 @@ export function ContactSection() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">
+                  <label className="block text-sm font-medium text-[#F8F8FF] mb-1.5">
                     Phone Number
                   </label>
                   <input
@@ -131,7 +137,7 @@ export function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#374151] mb-1.5">
+                  <label className="block text-sm font-medium text-[#F8F8FF] mb-1.5">
                     Message
                   </label>
                   <textarea
@@ -148,7 +154,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+                  className="cursor-pointer w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
                   {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
@@ -156,7 +162,7 @@ export function ContactSection() {
           </FadeUp>
 
           <FadeUp delay={0.15} className="space-y-7">
-            <div className="rounded-3xl overflow-hidden h-64 border border-[#E5E7EB] shadow-sm">
+            <div className="rounded-3xl overflow-hidden h-64 border border-[#2B2B42] shadow-sm">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212645.3613135246!2d72.82115365!3d33.6844202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891722f%3A0x6789d6df690b4c5b!2sIslamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1716000000000!5m2!1sen!2s"
                 width="100%"
@@ -179,7 +185,7 @@ export function ContactSection() {
                     <div className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-widest mb-0.5">
                       {row.label}
                     </div>
-                    <div className="text-[#374151] text-sm">{row.val}</div>
+                    <div className="text-[#F8F8FF] text-sm">{row.val}</div>
                   </div>
                 </div>
               ))}

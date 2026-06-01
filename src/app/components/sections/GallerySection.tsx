@@ -18,6 +18,10 @@ import { SectionHeading } from "@/app/components/shared/SectionHeading";
 const VISIBLE_COUNT = 8;
 const remainingCount = GALLERY_ITEMS.length - VISIBLE_COUNT;
 
+/** Full image visible, aspect ratio preserved, never stretched or cropped */
+const galleryImageClass =
+  "absolute inset-0 w-full h-full object-cover object-center";
+
 type ModalView = null | "grid" | "lightbox";
 
 function getGridClass(index: number): string {
@@ -54,7 +58,7 @@ export function GallerySection() {
 
   const goPrev = useCallback(() => {
     setActiveIndex(
-      (prev) => (prev - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length
+      (prev) => (prev - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length,
     );
   }, []);
 
@@ -144,20 +148,18 @@ export function GallerySection() {
                   className={`${getGridClass(i)} min-h-0`}>
                   <div
                     className="relative group rounded-xl overflow-hidden bg-[#1A1A30] cursor-pointer h-full"
-                    onClick={() =>
-                      isOverlay ? openGrid() : openLightbox(i)
-                    }>
+                    onClick={() => (isOverlay ? openGrid() : openLightbox(i))}>
                     <img
                       src={item.url}
                       alt={item.alt}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className={galleryImageClass}
                     />
 
                     {isOverlay ? (
                       <div className="absolute inset-0 bg-black/55 flex items-center justify-center transition-colors group-hover:bg-black/40">
                         <div className="text-center">
                           <Images className="w-8 h-8 text-white/80 mx-auto mb-2" />
-                          <span className="text-white text-xl font-bold">
+                          <span className="font-heading text-white text-xl font-bold">
                             +{remainingCount} photos
                           </span>
                         </div>
@@ -187,7 +189,7 @@ export function GallerySection() {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[100] bg-[#080818] flex flex-col">
             <div className="flex items-center justify-between px-4 md:px-6 py-4 border-b border-white/[0.08] flex-shrink-0">
-              <h2 className="text-white font-semibold text-lg">
+              <h2 className="font-heading text-white font-semibold text-lg">
                 Gallery
                 <span className="text-white/40 text-sm font-normal ml-2">
                   {GALLERY_ITEMS.length} photos
@@ -213,7 +215,7 @@ export function GallerySection() {
                     <img
                       src={item.url}
                       alt={item.alt}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className={galleryImageClass}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                       <p className="text-white text-xs font-medium">
@@ -272,7 +274,7 @@ export function GallerySection() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.18 }}
-                  className="max-h-full max-w-full object-contain rounded-lg select-none"
+                  className="max-h-full max-w-full w-auto h-auto object-contain object-center rounded-lg select-none"
                   draggable={false}
                 />
               </AnimatePresence>
@@ -305,7 +307,7 @@ export function GallerySection() {
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`relative flex-shrink-0 w-[72px] h-[52px] rounded overflow-hidden transition-all duration-200 border-2 ${
+                    className={`relative flex-shrink-0 w-[72px] h-[52px] rounded overflow-hidden bg-[#1A1A30] transition-all duration-200 border-2 ${
                       i === activeIndex
                         ? "border-amber-400 opacity-100"
                         : "border-transparent opacity-40 hover:opacity-75"
@@ -313,7 +315,7 @@ export function GallerySection() {
                     <img
                       src={item.url}
                       alt={item.alt}
-                      className="w-full h-full object-cover"
+                      className={galleryImageClass}
                       draggable={false}
                     />
                   </button>

@@ -262,9 +262,9 @@ export function TestimonialsSection() {
             </>
           }
           description="Hear from the founders, creatives, and teams who call Funavry their professional home.">
-          {"Islamabad's"} builders
+          {"What Our"} Members Say
           <br />
-          <span className={sectionHeadingGradient}>trust Funavry</span>
+          <span className={sectionHeadingGradient}>About Funavry</span>
         </SectionHeading>
 
         <FadeUp delay={0.1}>

@@ -129,7 +129,7 @@ export function GallerySection() {
                 Our Space
               </>
             }
-            description="Every corner of Funavry was designed with purpose — to inspire concentration, conversation, and creativity.">
+            description="Every corner of Funavry was designed with purpose to inspire concentration, conversation, and creativity.">
             Designed for
             <br />
             <span className={sectionHeadingGradient}>deep, focused work</span>

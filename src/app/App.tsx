@@ -10,6 +10,7 @@ import {
   Navbar,
   HeroSection,
   ServicesSection,
+  ServicesSplitSection,
   WhyChooseSection,
   AmenitiesSection,
   TestimonialsSection,
@@ -32,12 +33,16 @@ export default function App() {
       <Navbar onBookTour={() => openBooking()} />
       <HeroSection onBookTour={() => openBooking()} />
 
-      <RevealSection>
+      {/* <RevealSection>
         <ServicesSection onBook={openBooking} />
+      </RevealSection> */}
+      <RevealSection delay={0.05}>
+        <ServicesSplitSection onBook={openBooking} />
       </RevealSection>
       <RevealSection delay={0.05}>
         <WhyChooseSection />
       </RevealSection>
+
       <RevealSection delay={0.05}>
         <AmenitiesSection />
       </RevealSection>

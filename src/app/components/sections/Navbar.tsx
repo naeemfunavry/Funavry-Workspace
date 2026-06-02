@@ -13,12 +13,30 @@ type NavbarProps = {
 export function Navbar({ onBookTour }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 24);
     fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  useEffect(() => {
+    const offset = 100;
+    const updateActive = () => {
+      let current: string | null = null;
+      for (const link of NAV_LINKS) {
+        const el = document.getElementById(link.id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = link.id;
+        }
+      }
+      setActiveId(current);
+    };
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+    return () => window.removeEventListener("scroll", updateActive);
   }, []);
 
   return (
@@ -55,7 +73,11 @@ export function Navbar({ onBookTour }: NavbarProps) {
             <button
               key={l.id}
               onClick={() => scrollTo(l.id)}
-              className="px-4 py-2 text-white/55 hover:text-white text-sm font-semibold transition-colors rounded-lg hover:bg-white/[0.06] cursor-pointer">
+              className={`px-0 mx-4 py-2 text-xs tracking-wider font-normal uppercase transition-colors cursor-pointer border-b-2 ${
+                activeId === l.id
+                  ? "text-white border-amber-500"
+                  : "text-white/80 hover:text-white border-transparent hover:border-amber-500"
+              }`}>
               {l.label}
             </button>
           ))}
@@ -64,7 +86,7 @@ export function Navbar({ onBookTour }: NavbarProps) {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onBookTour}
-            className="cursor-pointer px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white text-base font-semibold hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 hover:scale-105 active:scale-95">
+            className="cursor-pointer px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white text-sm font-normal uppercase hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 hover:scale-105 active:scale-95">
             Book a Tour
           </button>
         </div>
@@ -93,7 +115,11 @@ export function Navbar({ onBookTour }: NavbarProps) {
                     scrollTo(l.id);
                     setOpen(false);
                   }}
-                  className="text-white/60 hover:text-white text-base font-semibold text-left py-2.5 px-3 rounded-xl hover:bg-white/[0.05] transition-colors cursor-pointer">
+                  className={`text-base font-normal uppercase text-left py-2.5 px-3 transition-colors cursor-pointer border-b-2 ${
+                    activeId === l.id
+                      ? "text-white border-amber-500"
+                      : "text-white/60 hover:text-white border-transparent hover:border-amber-500"
+                  }`}>
                   {l.label}
                 </button>
               ))}

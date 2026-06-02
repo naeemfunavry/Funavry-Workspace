@@ -36,7 +36,7 @@ export function AmenitiesSection() {
               Amenities
             </>
           }
-          description="From high-speed connectivity to on-site support — every detail is managed so you can focus entirely on your work.">
+          description="From high-speed connectivity to on-site support every detail is managed so you can focus entirely on your work.">
           Everything included
           <br />
           <span className={sectionHeadingGradient}>in your workspace</span>

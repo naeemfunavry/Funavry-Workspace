@@ -134,7 +134,7 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.52 }}
                 className="text-lg sm:text-xl text-white/75 font-light max-w-6xl mx-auto mb-10 leading-relaxed">
-                Welcome to Funavry — a modern workspace built for freelancers,
+                Welcome to Funavry a modern workspace built for freelancers,
                 startups, remote teams, and growing IT companies. Located
                 adjacent to Srinagar Highway and steps from the Metro Bus
                 Terminal, we combine accessibility, comfort, and productivity in
@@ -149,15 +149,15 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
                 className="flex flex-col sm:flex-row items-center justify-start gap-4">
                 <button
                   onClick={onBookTour}
-                  className="cursor-pointer group flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-2xl hover:shadow-amber-500/45 transition-all duration-300 hover:scale-105 active:scale-95">
+                  className="cursor-pointer group flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-normal uppercase text-sm hover:shadow-2xl hover:shadow-amber-500/45 transition-all duration-300 hover:scale-105 active:scale-95">
                   Book a Tour
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
                 <button
                   onClick={() => scrollTo("services")}
-                  className="cursor-pointer flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.09] text-white font-semibold text-base border border-white/[0.18] hover:bg-white/[0.14] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95">
+                  className="cursor-pointer flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.09] text-white font-normal uppercase text-sm border border-white/[0.18] hover:bg-white/[0.14] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95">
                   Explore Plans
-                  <ChevronRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </div>

@@ -1,6 +1,7 @@
 export { Navbar } from "./Navbar";
 export { HeroSection } from "./HeroSection";
 export { ServicesSection } from "./ServicesSection";
+export { ServicesSplitSection } from "./ServicesSplitSection";
 export { WhyChooseSection } from "./WhyChooseSection";
 export { AmenitiesSection } from "./AmenitiesSection";
 export { TestimonialsSection } from "./TestimonialsSection";

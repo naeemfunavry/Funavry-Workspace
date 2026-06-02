@@ -1,4 +1,4 @@
-/** Raleway — headings, display, section titles */
+/** Raleway headings, display, section titles */
 export const fontHeading = "font-heading";
 
 /** Hero: 56–72px desktop, scales down on tablet/mobile */
@@ -22,7 +22,7 @@ export const cardTitleClass =
 
 /** Body copy: 16–18px */
 export const bodyTextClass =
-  "text-base sm:text-lg font-normal leading-[1.65] tracking-[0.01em]";
+  "text-base sm:text-md font-normal leading-[1.65] tracking-[0.01em]";
 
 export const sectionSubheadingClass =
   `${bodyTextClass} text-[#6B7280]`;

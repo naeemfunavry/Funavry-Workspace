@@ -46,9 +46,14 @@ import gallery14 from "@/assets/images/gallery/14.jpg";
 import gallery15 from "@/assets/images/gallery/15.jpg";
 import gallery16 from "@/assets/images/gallery/16.jpg";
 import gallery17 from "@/assets/images/gallery/17.jpg";
+import gallery18 from "@/assets/images/gallery/18.jpg";
+import gallery19 from "@/assets/images/gallery/19.jpg";
+import gallery20 from "@/assets/images/gallery/20.jpg";
+import gallery21 from "@/assets/images/gallery/21.jpg";
+import gallery22 from "@/assets/images/gallery/22.jpg";
 
 // Why Choose Images
-import whyChoose1 from "@/assets/images/why-choose/1.png";
+import whyChoose1 from "@/assets/images/why-choose/1.jpg";
 import whyChoose2 from "@/assets/images/why-choose/2.png";
 import whyChoose3 from "@/assets/images/why-choose/3.png";
 import whyChoose4 from "@/assets/images/why-choose/4.png";
@@ -257,7 +262,7 @@ export const TESTIMONIALS = [
     company: "NovaTech Solutions",
     avatar:
       "../assets/images/testimonials/ahmed-khalid.jpg",
-    text: "Funavry completely changed how we work. We moved in as a 3-person startup with no idea what we were doing, and within 6 months the community, mentors, and sheer energy of the space helped us close our first seed round. This isn't just a desk — it's a launchpad.",
+    text: "Funavry completely changed how we work. We moved in as a 3-person startup with no idea what we were doing, and within 6 months the community, mentors, and sheer energy of the space helped us close our first seed round. This isn't just a desk it's a launchpad.",
     rating: 5,
   },
   {
@@ -284,7 +289,7 @@ export const TESTIMONIALS = [
     company: "Business Coach",
     avatar:
       "../assets/images/testimonials/maria-zaidi.jpg",
-    text: "I've used co-working spaces in Dubai and Kuala Lumpur, and Funavry honestly belongs in the same conversation. The ergonomic setup, the quiet zones, the meeting rooms — everything is thoughtfully designed. My investors were genuinely impressed when I hosted them here.",
+    text: "I've used co-working spaces in Dubai and Kuala Lumpur, and Funavry honestly belongs in the same conversation. The ergonomic setup, the quiet zones, the meeting rooms everything is thoughtfully designed. My investors were genuinely impressed when I hosted them here.",
     rating: 5,
   },
   {
@@ -293,7 +298,7 @@ export const TESTIMONIALS = [
     company: "Business Coach",
     avatar:
       "../assets/images/testimonials/tariq-nawaz.jpg",
-    text: "Our Singapore-based company needed a Islamabad base for our local team. Funavry's virtual office and dedicated desks were the perfect solution — professional address, reception, and a team that handles everything. Our remote setup has never felt so smooth.",
+    text: "Our Singapore-based company needed a Islamabad base for our local team. Funavry's virtual office and dedicated desks were the perfect solution professional address, reception, and a team that handles everything. Our remote setup has never felt so smooth.",
     rating: 5,
   },
   {
@@ -311,7 +316,7 @@ export const TESTIMONIALS = [
     company: "CloudNest Systems",
     avatar:
       "../assets/images/testimonials/hassan-mirza.jpg",
-    text: "We scaled from 5 to 18 people within the same building without missing a beat. Funavry handled the transition seamlessly — new office, new layout, zero downtime for our dev team. The generator backup means load-shedding is now completely off our radar.",
+    text: "We scaled from 5 to 18 people within the same building without missing a beat. Funavry handled the transition seamlessly new office, new layout, zero downtime for our dev team. The generator backup means load-shedding is now completely off our radar.",
     rating: 5,
   },
 ];
@@ -393,6 +398,31 @@ export const GALLERY_ITEMS = [
     alt: "Islamabad skyline from Funavry",
     wide: true,
   },
+  {
+    url: gallery18,
+    alt: "Funavry Technologies Restroom",
+    wide: true,
+  },
+  {
+    url: gallery19,
+    alt: "Funavry Technologies Lounge",
+    wide: true,
+  },
+  {
+    url: gallery20,
+    alt: "Funavry Technologies Meeting Room",
+    wide: true,
+  },
+  {
+    url: gallery21,
+    alt: "Funavry Technologies Event Space",
+    wide: true,
+  },
+  {
+    url: gallery22,
+    alt: "Funavry Technologies Parking",
+    wide: true,
+  },
 ];
 
 export const WHY_ITEMS = [
@@ -436,8 +466,8 @@ export const WHY_ITEMS = [
     icon: Lightbulb,
     title: "Designed for Focus, Creativity & Growth",
     summary:
-      "Our thoughtfully designed workspaces balance energy and calm — featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
-    body: "Our thoughtfully designed workspaces balance energy and calm — featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
+      "Our thoughtfully designed workspaces balance energy and calm featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
+    body: "Our thoughtfully designed workspaces balance energy and calm featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
     accent: "#10B981",
     image: whyChoose5,
   },
@@ -454,7 +484,7 @@ export const WHY_ITEMS = [
 
 export const WHY_CHOOSE_SPLIT = {
   eyebrow: "Why Funavry",
-  title: "More than a desk —",
+  title: "More than a desk",
   titleAccent: "a community",
   description:
     "At Funavry, we believe your environment shapes your potential. From silent focus rooms to vibrant collaboration hubs, every corner is designed to fuel creative energy and professional excellence in the F-Sector, Islamabad.",
@@ -469,27 +499,45 @@ export const WHY_CHOOSE_SPLIT = {
   features: [
     {
       icon: Cpu,
-      title: "Modern Infrastructure",
+      title: "Modern Infrastructure Built for IT Companies",
       description:
-        "Gigabit fiber, enterprise-grade video conferencing, and backup power — built for IT companies.",
+        "Experience a workspace engineered for productivity with high-speed uninterrupted internet, ergonomic workstations, smart meeting rooms, reliable power backup, and secure technology infrastructure designed to support modern businesses and growing teams.",
     },
     {
       icon: Lock,
-      title: "24/7 Secure Access",
+      title: "Prime Location with Seamless Accessibility",
       description:
-        "Biometric entry, CCTV, and on-site security — work at your own pace, day or night.",
+        "Strategically located adjacent to Srinagar Highway and within walking distance of the Metro Bus Terminal, Funavry offers quick access to Islamabad’s key business districts, restaurants, cafés, gyms, banks, and essential professional services.",
     },
     {
       icon: Users,
-      title: "Thriving Community",
+      title: "All-Inclusive Premium Amenities",
       description:
-        "Monthly events, workshops, and a network of ambitious professionals to grow alongside.",
+        "From 24/7 security and uninterrupted utilities to housekeeping, refreshments, dedicated support staff, and fully equipped conference spaces, every detail is managed so you can focus entirely on your business.",
+    },
+    {
+      icon: Users,
+      title: "A Collaborative Community of Innovators",
+      description:
+        "Join a vibrant ecosystem of freelancers, startups, entrepreneurs, and IT professionals where collaboration, networking, mentorship, and new opportunities happen naturally every day.",
+    },
+    {
+      icon: Users,
+      title: "Designed for Focus, Creativity & Growth",
+      description:
+        "Our thoughtfully designed workspaces balance energy and calm featuring collaborative zones for teamwork alongside quiet spaces for deep focus, creativity, and uninterrupted productivity.",
+    },
+    {
+      icon: Users,
+      title: "Flexible Workspace Solutions",
+      description:
+        "Whether you are an individual freelancer, a remote team, or a scaling technology company, Funavry offers flexible workspace solutions tailored to your evolving business needs. At Funavry, we offer more than just office space we provide an environment where ambitious professionals and innovative companies can build, connect, and grow together in the heart of Islamabad."
     },
   ],
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Plans", id: "services" },
+  { label: "Services", id: "services" },
   { label: "Why Us", id: "why" },
   { label: "Amenities", id: "amenities" },
   { label: "Gallery", id: "gallery" },

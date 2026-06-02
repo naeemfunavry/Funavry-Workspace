@@ -141,7 +141,7 @@ export function ContactSection() {
                     Message
                   </label>
                   <textarea
-                    rows={5}
+                    rows={9}
                     required
                     placeholder="Tell us about your team size, preferred plan, or any questions..."
                     value={form.message}
@@ -154,7 +154,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="cursor-pointer w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold text-base hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
+                  className="cursor-pointer w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-normal uppercase text-sm hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed">
                   {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>

@@ -26,17 +26,18 @@ export function WhyChooseSection() {
               Why Funavry
             </>
           }
-          description="More than office space — an environment where ambitious professionals and innovative companies build, connect, and grow together in the heart of Islamabad.">
+          description="More than office space an environment where ambitious professionals and innovative companies build, connect, and grow together in the heart of Islamabad.">
           Why choose
           <br />
           <span className={sectionHeadingGradient}>Funavry?</span>
         </SectionHeading>
 
-        {/* <WhyChooseSplit /> */}
-
-        <FadeUp delay={0.05} className="relative left-1/2  -translate-x-1/2">
-          <WhyChooseAccordion />
+        <FadeUp delay={0.08}>
+          <WhyChooseSplit />
         </FadeUp>
+        {/* <FadeUp delay={0.05} className="relative left-1/2  -translate-x-1/2">
+          <WhyChooseAccordion />
+        </FadeUp> */}
 
         <FadeUp delay={0.12} className="mt-14 lg:mt-20">
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.08]">
@@ -46,9 +47,8 @@ export function WhyChooseSection() {
                 "
               </div>
               <p className="text-base leading-relaxed text-white/80 sm:text-lg">
-                At Funavry, we offer more than just office space — an
-                environment where ambitious professionals and innovative
-                companies can{" "}
+                At Funavry, we offer more than just office space an environment
+                where ambitious professionals and innovative companies can{" "}
                 <span className="font-semibold text-white">
                   build, connect, and grow
                 </span>{" "}

@@ -93,7 +93,7 @@ export function BookingModal({ service, onClose }: BookingModalProps) {
                 <input
                   type="text"
                   required
-                  placeholder="Ahmed Khan"
+                  placeholder="Your Name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className={INPUT_CLASS}
@@ -106,7 +106,7 @@ export function BookingModal({ service, onClose }: BookingModalProps) {
                 <input
                   type="email"
                   required
-                  placeholder="ahmed@company.pk"
+                  placeholder="your@email.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className={INPUT_CLASS}
@@ -118,7 +118,7 @@ export function BookingModal({ service, onClose }: BookingModalProps) {
                 </label>
                 <input
                   type="tel"
-                  placeholder="+92 300 1234567"
+                  placeholder="+92 300 12345678"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className={INPUT_CLASS}

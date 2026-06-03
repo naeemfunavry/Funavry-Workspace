@@ -538,8 +538,8 @@ export const WHY_CHOOSE_SPLIT = {
 
 export const NAV_LINKS = [
   { label: "Services", id: "services" },
-  { label: "Why Us", id: "why" },
   { label: "Amenities", id: "amenities" },
+  { label: "Why Us", id: "why" },
   { label: "Gallery", id: "gallery" },
   { label: "Testimonials", id: "testimonials" },
   { label: "Contact", id: "contact" },

@@ -40,11 +40,10 @@ export default function App() {
         <ServicesSplitSection onBook={openBooking} />
       </RevealSection>
       <RevealSection delay={0.05}>
-        <WhyChooseSection />
-      </RevealSection>
-
-      <RevealSection delay={0.05}>
         <AmenitiesSection />
+      </RevealSection>
+      <RevealSection delay={0.05}>
+        <WhyChooseSection />
       </RevealSection>
       <RevealSection delay={0.05}>
         <GallerySection />

@@ -133,7 +133,7 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.52 }}
-                className="text-lg sm:text-xl text-white/75 font-light max-w-6xl mx-auto mb-10 leading-relaxed">
+                className="text-lg sm:text-xl text-white/75 font-light max-w-6xl mx-auto mb-10 leading-relaxed text-justify">
                 Welcome to Funavry a modern workspace built for freelancers,
                 startups, remote teams, and growing IT companies. Located
                 adjacent to Srinagar Highway and steps from the Metro Bus

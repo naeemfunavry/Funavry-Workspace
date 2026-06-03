@@ -82,21 +82,21 @@ export function HeroSection({ onBookTour }: HeroSectionProps) {
             ))}
           </CarouselContent>
 
-          <div className="absolute bottom-6 right-5 lg:right-8 z-[2] pointer-events-auto flex items-center gap-2">
+          <div className="absolute bottom-16 right-5 lg:right-8 z-[2] pointer-events-auto flex items-center gap-2">
             <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] text-white/45">
               <SlidersHorizontal className="w-3.5 h-3.5 text-amber-400" />
               <span className="text-[10px] font-bold uppercase tracking-widest tabular-nums">
                 {activeSlide + 1} / {HERO_BG_IMAGES.length}
               </span>
             </div>
-            <CarouselPrevious
+            {/* <CarouselPrevious
               variant="outline"
               className="static left-auto top-auto translate-y-0 size-9 rounded-full border-white/[0.18] bg-white/[0.09] text-white hover:bg-white/[0.14] hover:text-white disabled:opacity-30"
             />
             <CarouselNext
               variant="outline"
               className="static right-auto top-auto translate-y-0 size-9 rounded-full border-white/[0.18] bg-white/[0.09] text-white hover:bg-white/[0.14] hover:text-white disabled:opacity-30"
-            />
+            /> */}
           </div>
         </Carousel>
 

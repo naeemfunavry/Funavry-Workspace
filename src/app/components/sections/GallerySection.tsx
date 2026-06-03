@@ -19,8 +19,7 @@ const VISIBLE_COUNT = 8;
 const remainingCount = GALLERY_ITEMS.length - VISIBLE_COUNT;
 
 /** Full image visible, aspect ratio preserved, never stretched or cropped */
-const galleryImageClass =
-  "absolute inset-0 w-full h-full object-cover object-center";
+const galleryImageClass = "absolute inset-0 w-full h-full object-center";
 
 type ModalView = null | "grid" | "lightbox";
 

@@ -24,41 +24,41 @@ import {
   EventSpaceIcon,
   HotBeveragesIcon,
 } from "@/app/components/sections/AmenityIcons";
-import hero1 from "@/assets/images/hero-1.jpg";
-import hero2 from "@/assets/images/hero-2.webp";
-import hero3 from "@/assets/images/hero-3.webp";
-import hero4 from "@/assets/images/hero-4.webp";
-import hero5 from "@/assets/images/hero-5.webp";
-import gallery1 from "@/assets/images/gallery/1.jpg";
-import gallery2 from "@/assets/images/gallery/2.jpg";
-import gallery3 from "@/assets/images/gallery/3.jpg";
-import gallery4 from "@/assets/images/gallery/4.jpg";
-import gallery5 from "@/assets/images/gallery/5.jpg";
-import gallery6 from "@/assets/images/gallery/6.jpg";
-import gallery7 from "@/assets/images/gallery/7.jpg";
-import gallery8 from "@/assets/images/gallery/8.jpg";
-import gallery9 from "@/assets/images/gallery/9.jpg";
-import gallery10 from "@/assets/images/gallery/10.jpg";
-import gallery11 from "@/assets/images/gallery/11.jpg";
-import gallery12 from "@/assets/images/gallery/12.jpg";
-import gallery13 from "@/assets/images/gallery/13.jpg";
-import gallery14 from "@/assets/images/gallery/14.jpg";
-import gallery15 from "@/assets/images/gallery/15.jpg";
-import gallery16 from "@/assets/images/gallery/16.jpg";
-import gallery17 from "@/assets/images/gallery/17.jpg";
-import gallery18 from "@/assets/images/gallery/18.jpg";
-import gallery19 from "@/assets/images/gallery/19.jpg";
-import gallery20 from "@/assets/images/gallery/20.jpg";
-import gallery21 from "@/assets/images/gallery/21.jpg";
-import gallery22 from "@/assets/images/gallery/22.jpg";
+import hero1 from "@/assets/images/hero1.avif";
+import hero2 from "@/assets/images/hero2.avif";
+import hero3 from "@/assets/images/hero3.avif";
+import hero4 from "@/assets/images/hero4.avif";
+import hero5 from "@/assets/images/hero5.avif";
+import gallery1 from "@/assets/images/gallery/1.avif";
+import gallery2 from "@/assets/images/gallery/2.avif";
+import gallery3 from "@/assets/images/gallery/3.avif";
+import gallery4 from "@/assets/images/gallery/4.avif";
+import gallery5 from "@/assets/images/gallery/5.avif";
+import gallery6 from "@/assets/images/gallery/6.avif";
+import gallery7 from "@/assets/images/gallery/7.avif";
+import gallery8 from "@/assets/images/gallery/8.avif";
+import gallery9 from "@/assets/images/gallery/9.avif";
+import gallery10 from "@/assets/images/gallery/10.avif";
+import gallery11 from "@/assets/images/gallery/11.avif";
+import gallery12 from "@/assets/images/gallery/12.avif";
+import gallery13 from "@/assets/images/gallery/13.avif";
+import gallery14 from "@/assets/images/gallery/14.avif";
+import gallery15 from "@/assets/images/gallery/15.avif";
+import gallery16 from "@/assets/images/gallery/16.avif";
+import gallery17 from "@/assets/images/gallery/17.avif";
+import gallery18 from "@/assets/images/gallery/18.avif";
+import gallery19 from "@/assets/images/gallery/19.avif";
+import gallery20 from "@/assets/images/gallery/20.avif";
+import gallery21 from "@/assets/images/gallery/21.avif";
+import gallery22 from "@/assets/images/gallery/22.avif";
 
 // Why Choose Images
-import whyChoose1 from "@/assets/images/why-choose/1.jpg";
-import whyChoose2 from "@/assets/images/why-choose/2.png";
-import whyChoose3 from "@/assets/images/why-choose/3.png";
-import whyChoose4 from "@/assets/images/why-choose/4.png";
-import whyChoose5 from "@/assets/images/why-choose/5.png";
-import whyChoose6 from "@/assets/images/why-choose/6.png";
+import whyChoose1 from "@/assets/images/why-choose/1.avif";
+import whyChoose2 from "@/assets/images/why-choose/2.avif";
+import whyChoose3 from "@/assets/images/why-choose/3.avif";
+import whyChoose4 from "@/assets/images/why-choose/4.avif";
+import whyChoose5 from "@/assets/images/why-choose/5.avif";
+import whyChoose6 from "@/assets/images/why-choose/6.avif";
 
 export const HERO_BG_IMAGES = [
   {
@@ -329,98 +329,98 @@ export const GALLERY_ITEMS = [
   },
   {
     url: gallery2,
-    alt: "Funavry Technologies Restroom",
+    alt: "Office Entrance",
   },
   {
     url: gallery3,
-    alt: "Funavry Technologies Playing Area",
+    alt: "Reception Area",
     tall: true,
   },
   {
     url: gallery4,
-    alt: "Reception lounge for conversation",
+    alt: "Entrance & Quote Wall",
   },
   {
     url: gallery5,
-    alt: "Branded glass entrance to Funavry",
+    alt: "Conference Room",
   },
   {
     url: gallery6,
-    alt: "Modern corridor designed for focus",
+    alt: "Glass Meeting Room",
   },
   {
     url: gallery7,
-    alt: "Private executive office with meeting room",
+    alt: "Open Workspace",
     tall: true,
   },
   {
     url: gallery8,
-    alt: "Executive suite with lounge seating",
+    alt: "Inspiration Meet Pods",
     wide: true,
   },
   {
     url: gallery9,
-    alt: "Premium desk with city views",
+    alt: "Collaborative Workspace",
   },
   {
     url: gallery10,
-    alt: "Spacious office built for deep work",
+    alt: "Executive Office & Lounge",
   },
   {
     url: gallery11,
-    alt: "Glass-partitioned open workspace",
+    alt: "Boardroom",
     wide: true,
   },
   {
     url: gallery12,
-    alt: "Private offices for focused teams",
+    alt: "Executive Boardroom",
   },
   {
     url: gallery13,
-    alt: "Shared desks for collaborative work",
+    alt: "Game Room",
     tall: true,
   },
   {
     url: gallery14,
-    alt: "Bright coworking desks and lounge",
+    alt: "Automation Corridor",
   },
   {
     url: gallery15,
-    alt: "Open hot-desk and event space",
+    alt: "Open Plan Office",
     wide: true,
   },
   {
     url: gallery16,
-    alt: "Collaboration-focused workspace entrance",
+    alt: "Breakout Lounge",
   },
   {
     url: gallery17,
-    alt: "Islamabad skyline from Funavry",
+    alt: "Funavry Conference Room",
     wide: true,
   },
   {
     url: gallery18,
-    alt: "Funavry Technologies Restroom",
+    alt: "Co-Working Hall",
     wide: true,
   },
   {
     url: gallery19,
-    alt: "Funavry Technologies Lounge",
+    alt: "Glass Meeting Room",
     wide: true,
   },
   {
     url: gallery20,
-    alt: "Funavry Technologies Meeting Room",
+    alt: "Event & Collaboration Space",
     wide: true,
   },
   {
     url: gallery21,
-    alt: "Funavry Technologies Event Space",
+    alt: " Islamabad Skyline View",
     wide: true,
   },
   {
     url: gallery22,
-    alt: "Funavry Technologies Parking",
+    alt: " Hot Desk Area",
     wide: true,
   },
 ];

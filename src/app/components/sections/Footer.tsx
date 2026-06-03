@@ -19,7 +19,7 @@ export function Footer() {
       />
       <div className="max-w-7xl mx-auto py-7 sm:py-8">
         <div className="flex flex-col gap-6 sm:gap-7 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-          <div className="lg:max-w-[260px]">
+          <div className="lg:max-w-[300px]">
             <button
               type="button"
               onClick={() => scrollTo("hero")}
@@ -31,7 +31,7 @@ export function Footer() {
                 className="h-6 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100"
               />
             </button>
-            <p className="text-muted-foreground text-xs leading-relaxed">
+            <p className="text-muted-foreground text-base leading-relaxed text-justify">
               {"Islamabad's"} most inspiring coworking space. Built for
               builders, designers, founders, and the teams that shape tomorrow.
             </p>
